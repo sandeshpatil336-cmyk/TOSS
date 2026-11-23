@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Barlow Condensed", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #081711;
+    color: #f8fafc;
+    overscroll-behavior-y: none;
+  }
+}
+
+.coin-scene {
+  perspective: 950px;
+}
+
+.coin-body {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.coin-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.coin-face-back {
+  transform: rotateX(180deg);
+}
+
+@keyframes pitch-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.45);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.1);
+    opacity: 0;
+  }
+}
+
+.animate-pitch-ripple {
+  animation: pitch-ripple 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pitch-ripple {
+    animation: none;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "UV TOSS",
+  "description": "Cricket Ground Toss — Interactive ₹1 Indian coin toss with hold-to-power 3D physics and realistic metallic Web Audio effects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
